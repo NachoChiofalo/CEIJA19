@@ -2,6 +2,8 @@
 // Edit this file to update timeline events, promociones, gallery items, and team.
 
 import creacionEscuelaImage from "@/assets/creacionEscuela.png";
+import primeraPromo1978Image from "@/assets/primeraPromo1978.png";
+import promo1981Image from "@/assets/promo1981.png";
 
 export interface TimelineEvent {
   year: string;
@@ -81,7 +83,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1878",
     year: 1978,
     title: "Promoción 1978",
-    imageUrl: "src/assets/primeraPromo1978.png",
+    imageUrl: primeraPromo1978Image,
     story: "La primera promoción del CEIJA 19. Un grupo pequeño y unido que abrió camino para todas las que vendrían. Se reunían los sábados a estudiar en la biblioteca pública del barrio.",
     graduates: [
       "ABALOS, Elvira Fidelma",
@@ -106,7 +108,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1981",
     year: 1981,
     title: "Promoción 1981",
-    imageUrl: "src/assets/promo1981.png",
+    imageUrl: promo1981Image,
     story: "Recordada por organizar el primer viaje de egresados de la institución y por haber pintado el mural del patio central, todavía visible hoy.",
     graduates: [
       "ALVAREZ, Emma de las Mercedes",
