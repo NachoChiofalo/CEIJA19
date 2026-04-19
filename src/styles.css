@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sepia: var(--sepia);
+  --color-sepia-deep: var(--sepia-deep);
+  --color-cream: var(--cream);
+  --color-gold: var(--gold);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  /* CEIJA 19 — celeste argentino + acentos del logo */
+  --background: oklch(0.985 0.005 240);       /* casi blanco con leve frío */
+  --foreground: oklch(0.22 0.04 250);         /* azul muy oscuro / tinta */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 250);
+  --primary: oklch(0.62 0.13 240);            /* celeste bandera del logo */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.025 240);         /* celeste muy pálido */
+  --secondary-foreground: oklch(0.30 0.08 250);
+  --muted: oklch(0.95 0.015 240);
+  --muted-foreground: oklch(0.48 0.04 250);
+  --accent: oklch(0.70 0.16 45);              /* coral/terracota del escudo */
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.20 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.02 240);
+  --input: oklch(0.92 0.018 240);
+  --ring: oklch(0.62 0.13 240);
+  /* Aliases legacy (mantienen utilidades existentes) */
+  --sepia: oklch(0.70 0.16 45);               /* ahora coral del escudo */
+  --sepia-deep: oklch(0.45 0.13 250);         /* azul profundo */
+  --cream: oklch(0.985 0.005 240);
+  --gold: oklch(0.78 0.14 80);                /* dorado del sol del escudo */
+}
+
+.dark {
+  --background: oklch(0.18 0.03 250);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.22 0.035 250);
+  --card-foreground: oklch(0.95 0.01 240);
+  --popover: oklch(0.22 0.035 250);
+  --popover-foreground: oklch(0.95 0.01 240);
+  --primary: oklch(0.70 0.13 240);
+  --primary-foreground: oklch(0.15 0.03 250);
+  --secondary: oklch(0.27 0.04 250);
+  --secondary-foreground: oklch(0.95 0.01 240);
+  --muted: oklch(0.27 0.04 250);
+  --muted-foreground: oklch(0.70 0.02 240);
+  --accent: oklch(0.68 0.16 45);
+  --accent-foreground: oklch(0.99 0 0);
+  --border: oklch(0.32 0.03 250);
+  --input: oklch(0.32 0.03 250);
+  --ring: oklch(0.70 0.13 240);
+  --sepia: oklch(0.68 0.16 45);
+  --sepia-deep: oklch(0.70 0.13 240);
+  --cream: oklch(0.95 0.01 240);
+  --gold: oklch(0.78 0.14 80);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-feature-settings: "ss01", "ss02";
+  }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--color-background); }
+  ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-muted-foreground); }
+}
+
+/* ── Keyframes ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.animate-fade-up { animation: fade-up 700ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in { animation: fade-in 800ms ease-out both; }
+.animate-page-enter { animation: page-enter 500ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-slow-zoom { animation: slow-zoom 20s ease-out both; }
+
+/* Decorative subtle background tint */
+.paper-grain {
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(80, 140, 200, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(80, 140, 200, 0.05) 0%, transparent 50%);
+}
+
+/* Timeline dot pulse */
+@keyframes timeline-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-accent); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+.timeline-dot {
+  animation: timeline-pulse 2.5s ease-in-out infinite;
+}
