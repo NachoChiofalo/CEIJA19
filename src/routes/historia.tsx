@@ -12,7 +12,7 @@ export const Route = createFileRoute("/historia")({
       { title: "Historia — CEIJA 19 Museo Digital" },
       { name: "description", content: "Línea del tiempo del CEIJA 19: hitos, fundación y momentos clave en la historia de la escuela." },
       { property: "og:title", content: "Historia del CEIJA 19" },
-      { property: "og:description", content: "Hitos clave en la historia de nuestra escuela, desde 1985 hasta hoy." },
+      { property: "og:description", content: "Hitos clave en la historia de nuestra escuela, desde 1976 hasta hoy." },
     ],
   }),
 });
@@ -42,7 +42,7 @@ function HistoriaPage() {
             {TIMELINE.map((e, i) => {
               const active = i === selected;
               return (
-                <li key={e.year} className="relative pl-8 pb-6 last:pb-0">
+                <li key={`${e.year}-${e.title}`} className="relative pl-8 pb-6 last:pb-0">
                   <span
                     className={`absolute -left-[9px] top-2 w-4 h-4 rounded-full border-2 border-background transition-all ${
                       active ? "bg-primary scale-125 shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-primary)_25%,transparent)]" : "bg-accent"
@@ -60,6 +60,9 @@ function HistoriaPage() {
                       <Calendar className="w-3.5 h-3.5" />
                       <span className="font-serif text-lg font-semibold tracking-tight">{e.year}</span>
                     </div>
+                    {e.date ? (
+                      <p className="text-xs text-muted-foreground/80 mb-2">{e.date}</p>
+                    ) : null}
                     <p className={`font-serif text-sm font-medium ${active ? "text-foreground" : "text-foreground/80"}`}>
                       {e.title}
                     </p>
@@ -72,7 +75,7 @@ function HistoriaPage() {
           {/* Detail panel */}
           <aside className="lg:sticky lg:top-24">
             <article
-              key={event.year}
+              key={`${event.year}-${event.title}`}
               className="bg-card border border-border rounded-xl p-7 sm:p-9 shadow-sm"
               style={{ animation: "fade-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both" }}
             >
@@ -83,6 +86,9 @@ function HistoriaPage() {
               <p className="font-serif text-5xl sm:text-6xl font-semibold text-primary tracking-tight leading-none">
                 {event.year}
               </p>
+              {event.date ? (
+                <p className="mt-3 text-sm text-muted-foreground">{event.date}</p>
+              ) : null}
               <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground mt-5">
                 {event.title}
               </h2>

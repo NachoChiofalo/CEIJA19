@@ -7,6 +7,7 @@ import promo1981Image from "@/assets/promo1981.png";
 
 export interface TimelineEvent {
   year: string;
+  date?: string;
   title: string;
   description: string;
 }
@@ -42,39 +43,79 @@ export interface TeamMember {
 
 export const TIMELINE: TimelineEvent[] = [
   {
-    year: "1985",
-    title: "Fundación del CEIJA 19",
-    description: "Se inaugura el Centro Educativo para Jóvenes y Adultos N° 19, con la misión de brindar educación secundaria a quienes no pudieron completarla en su momento.",
+    year: "1976",
+    date: "22 de marzo de 1976",
+    title: "Creación del CENS 61 en Alcira Gigena",
+    description: "Inicia formalmente la actividad educativa, dependiente del CENS N° 24 de Río Cuarto. El proyecto nació para garantizar el acceso al secundario de jóvenes y adultos, impulsado por la gestión local y autoridades educativas nacionales.",
   },
   {
-    year: "1992",
-    title: "Primera promoción de egresados",
-    description: "Veintiocho alumnos completan sus estudios secundarios en la primera promoción del CEIJA 19, marcando el inicio de una larga tradición.",
+    year: "1980",
+    title: "Traslado a la Escuela José María Paz",
+    description: "A mediados de los años 80, el CENS 61 se traslada al edificio de la escuela primaria José María Paz y comienza a compartir el espacio físico en horario vespertino, modalidad que continúa hasta la actualidad.",
   },
   {
-    year: "1998",
-    title: "Ampliación del edificio",
-    description: "Se construyen nuevas aulas y un laboratorio para acompañar el crecimiento de la matrícula y diversificar la oferta educativa.",
+    year: "1993",
+    title: "El CENS 61 pasa a ser CENMA 61",
+    description: "Al transferirse del Ministerio de Educación de la Nación a la Provincia, el centro adopta el nombre de Centro Educativo de Nivel Medio para Adultos N° 61, conocido como CENMA 61.",
+  },
+  {
+    year: "2001",
+    title: "Nueva orientación de egreso",
+    description: "A veinticinco años de su creación, los egresados comienzan a recibir el título de Bachilleres Orientados en Producción de Bienes y Servicios, en línea con una nueva orientación pedagógica.",
+  },
+  {
+    year: "2001",
+    date: "18 de mayo de 2001",
+    title: "Creación del CEIJA 19 en Alcira Gigena (Anexo Elena)",
+    description: "Se crea el CEIJA 19 Alcira Gigena con el Anexo Elena, ampliando la presencia territorial de la institución y su impacto educativo en la región.",
+  },
+  {
+    year: "2003",
+    title: "Inicio de la Muestra Anual de Teatro",
+    description: "Por iniciativa de docentes y referentes culturales, comienza la Muestra Anual de Teatro. Con entrada libre y participación de estudiantes, escuelas y taller municipal, se convierte en un hito sostenido de la agenda cultural local.",
   },
   {
     year: "2005",
-    title: "Programa de orientación profesional",
-    description: "Se incorpora un programa integral de orientación vocacional y articulación con el mundo del trabajo y la educación superior.",
+    title: "Creación del Anexo Río de los Sauces",
+    description: "El CEIJA 19 suma el Anexo Río de los Sauces y fortalece su compromiso con la educación de jóvenes y adultos en nuevas comunidades.",
   },
   {
-    year: "2014",
-    title: "Sala de informática",
-    description: "Inauguración de la sala de informática con conexión a internet, ampliando las herramientas pedagógicas disponibles para alumnos y docentes.",
+    year: "2023",
+    date: "9 de junio de 2023",
+    title: "Apertura de la sede Berrotarán",
+    description: "Se incorpora la sede Berrotarán al CEIJA 19 Alcira Gigena, consolidando el crecimiento institucional y ampliando el alcance territorial.",
   },
   {
-    year: "2020",
-    title: "Educación a distancia",
-    description: "El equipo docente se adapta rápidamente a la modalidad virtual, sosteniendo el vínculo educativo durante el contexto sanitario.",
+    year: "2023",
+    title: "Participación en el Parlamento Juvenil del Mercosur",
+    description: "Estudiantes del CEIJA participan en el Parlamento Juvenil del Mercosur en instancias local, provincial y nacional, fortaleciendo la formación ciudadana y democrática.",
   },
   {
     year: "2024",
     title: "Lanzamiento del Museo Digital",
-    description: "Se inicia este proyecto para preservar y compartir la memoria viva de la institución y todas las personas que la construyeron.",
+    description: "Se presenta el Museo Digital como espacio para preservar, compartir y poner en valor la memoria institucional del CEIJA 19.",
+  },
+  {
+    year: "2025",
+    date: "16 de mayo de 2025",
+    title: "Creación del Anexo Alpa Corral",
+    description: "Mediante la Resolución 253 se crea el Anexo Alpa Corral. Su inauguración oficial se realiza el 13 de junio de 2025, ampliando la propuesta educativa del CEIJA 19.",
+  },
+  {
+    year: "2026",
+    title: "Creación del CEIJA N° 19",
+    description: "Se formaliza la creación del CEIJA N° 19 por Resolución N° 1005, consolidando un proceso histórico de crecimiento y transformación institucional.",
+  },
+  {
+    year: "2026",
+    date: "22 de marzo de 2026",
+    title: "Cincuentenario: misa y árbol conmemorativo",
+    description: "En acción de gracias por los 50 años de historia educativa, la comunidad celebra una misa y realiza la plantación del Árbol del Cincuentenario.",
+  },
+  {
+    year: "2026",
+    title: "Presentación del Museo Digital del CEIJA 19",
+    description: "El proyecto se presenta con la visión de innovar y conectar educación, trabajo y producción, promoviendo derechos humanos, igualdad de género, cultura de paz, preservación del ambiente y valoración de la diversidad cultural.",
   },
 ];
 
