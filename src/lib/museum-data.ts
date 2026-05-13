@@ -82,45 +82,45 @@ export const TIMELINE: TimelineEvent[] = [
   {
     year: "2001",
     title: "Nueva orientación de egreso",
-    description: "A veinticinco años de su creación, los egresados comienzan a recibir el título de Bachilleres Orientados en Producción de Bienes y Servicios, en línea con una nueva orientación pedagógica.",
+    description: "A veinticinco años de su creación, el CENMA 61 comienza a otorgar el título de Bachilleres Orientados en Producción de Bienes y Servicios, en línea con una nueva orientación pedagógica.",
   },
   {
     year: "2001",
     date: "18 de mayo de 2001",
-    title: "Creación del CEIJA 19 en Alcira Gigena (Anexo Elena)",
-    description: "Se crea el CEIJA 19 Alcira Gigena con el Anexo Elena, ampliando la presencia territorial de la institución y su impacto educativo en la región.",
+    title: "Creación del Anexo Elena del CENMA 61 en Alcira Gigena",
+    description: "Se crea el Anexo Elena del CENMA 61 en Alcira Gigena, ampliando la presencia territorial de la institución y su impacto educativo en la región.",
   },
   {
     year: "2003",
     title: "Inicio de la Muestra Anual de Teatro",
-    description: "Por iniciativa de docentes y referentes culturales, comienza la Muestra Anual de Teatro. Con entrada libre y participación de estudiantes, escuelas y taller municipal, se convierte en un hito sostenido de la agenda cultural local.",
+    description: "Por iniciativa de docentes y referentes culturales del CENMA 61, comienza la Muestra Anual de Teatro. Con entrada libre y participación de estudiantes, escuelas y taller municipal, se convierte en un hito sostenido de la agenda cultural local.",
   },
   {
     year: "2005",
     title: "Creación del Anexo Río de los Sauces",
-    description: "El CEIJA 19 suma el Anexo Río de los Sauces y fortalece su compromiso con la educación de jóvenes y adultos en nuevas comunidades.",
+    description: "El CENMA 61 suma el Anexo Río de los Sauces y fortalece su compromiso con la educación de jóvenes y adultos en nuevas comunidades.",
   },
   {
     year: "2023",
     date: "9 de junio de 2023",
     title: "Apertura de la sede Berrotarán",
-    description: "Se incorpora la sede Berrotarán al CEIJA 19 Alcira Gigena, consolidando el crecimiento institucional y ampliando el alcance territorial.",
+    description: "Se incorpora la sede Berrotarán al CENMA 61 Alcira Gigena, consolidando el crecimiento institucional y ampliando el alcance territorial.",
   },
   {
     year: "2023",
     title: "Participación en el Parlamento Juvenil del Mercosur",
-    description: "Estudiantes del CEIJA participan en el Parlamento Juvenil del Mercosur en instancias local, provincial y nacional, fortaleciendo la formación ciudadana y democrática.",
+    description: "Estudiantes del CENMA 61 participan en el Parlamento Juvenil del Mercosur en instancias local, provincial y nacional, fortaleciendo la formación ciudadana y democrática.",
   },
   {
     year: "2024",
     title: "Lanzamiento del Museo Digital",
-    description: "Se presenta el Museo Digital como espacio para preservar, compartir y poner en valor la memoria institucional del CEIJA 19.",
+    description: "Se presenta el Museo Digital del CENMA 61 como espacio para preservar, compartir y poner en valor la memoria institucional.",
   },
   {
     year: "2025",
     date: "16 de mayo de 2025",
     title: "Creación del Anexo Alpa Corral",
-    description: "Mediante la Resolución 253 se crea el Anexo Alpa Corral. Su inauguración oficial se realiza el 13 de junio de 2025, ampliando la propuesta educativa del CEIJA 19.",
+    description: "Mediante la Resolución 253 se crea el Anexo Alpa Corral del CENMA 61. Su inauguración oficial se realiza el 13 de junio de 2025, ampliando la propuesta educativa.",
   },
   {
     year: "2026",
@@ -131,7 +131,7 @@ export const TIMELINE: TimelineEvent[] = [
     year: "2026",
     date: "22 de marzo de 2026",
     title: "Cincuentenario: misa y árbol conmemorativo",
-    description: "En acción de gracias por los 50 años de historia educativa, la comunidad celebra una misa y realiza la plantación del Árbol del Cincuentenario.",
+    description: "En acción de gracias por los 50 años de historia educativa, la comunidad del CEIJA 19 celebra una misa y realiza la plantación del Árbol del Cincuentenario.",
   },
   {
     year: "2026",
