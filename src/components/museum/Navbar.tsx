@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/ceija-logo.jpeg";
+const LOGO_URL = "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/ceija-logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9jZWlqYS1sb2dvLmpwZWciLCJpYXQiOjE3Nzg2MzE0MDIsImV4cCI6MTgxMDE2NzQwMn0.JRwRV5ZKNVh40Bo5RKeJE7JfIVPzK0Pm5ZCEiPenqNE";
 
 const LINKS = [
   { to: "/" as const, label: "Inicio" },
@@ -19,7 +19,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Logo CEIJA 19" className="w-10 h-10 rounded-full object-contain" width={40} height={40} />
+          <img src={LOGO_URL} alt="Logo CEIJA 19" className="w-10 h-10 rounded-full object-contain" width={40} height={40} />
           <span className="font-serif text-lg font-semibold tracking-tight text-foreground leading-none">
             CEIJA 19
             <span className="block text-[10px] tracking-[0.18em] uppercase text-muted-foreground font-sans font-medium mt-0.5">

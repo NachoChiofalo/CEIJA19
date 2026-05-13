@@ -1,9 +1,30 @@
 // Static content for the CEIJA 19 Digital Museum.
 // Edit this file to update timeline events, promociones, gallery items, and team.
 
-import creacionEscuelaImage from "@/assets/creacionEscuela.png";
-import primeraPromo1978Image from "@/assets/primeraPromo1978.png";
-import promo1981Image from "@/assets/promo1981.png";
+
+const ASSET_URLS = {
+  creacionEscuela: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/creacionEscuela.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9jcmVhY2lvbkVzY3VlbGEucG5nIiwiaWF0IjoxNzc4NjMxNDA5LCJleHAiOjE4MTAxNjc0MDl9.2yw7u35zrjxOk_OklV6k00AWIKhfKeWSBgPFCfEjAAA",
+  primeraPromo1978: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/primeraPromo1978.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9wcmltZXJhUHJvbW8xOTc4LnBuZyIsImlhdCI6MTc3ODYzMTQ1MywiZXhwIjoxODEwMTY3NDUzfQ.4dSmVxwY6oNYc4MdciDAgq87VC1slwZY19K2EGn6gck",
+  promo1981: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/promo1981.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9wcm9tbzE5ODEucG5nIiwiaWF0IjoxNzc4NjMxNDYyLCJleHAiOjE4MTAxNjc0NjJ9.Zm-1oxBjbn8jV4GuNSCPYYo4r0qpKNGeMPnkOrYtwjs",
+  promo1980: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1980.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgwLnBuZyIsImlhdCI6MTc3ODYzMTIxMywiZXhwIjoxODEwMTY3MjEzfQ.53Q2IieUYmrlyJHa8AWvtuoM8IPrPNlvXd9e0w__Jfc",
+  promo1985: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1985.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg1LnBuZyIsImlhdCI6MTc3ODYzMTIxOCwiZXhwIjoxODEwMTY3MjE4fQ.5VLTwdxA5VxMzCmyiEJEVaaevQ9pdpk-UTmftbntgTk",
+  promo1989: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1989.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg5LnBuZyIsImlhdCI6MTc3ODYzMTIyNiwiZXhwIjoxODEwMTY3MjI2fQ.nSd8yhScsyBGunar1rNQntApBkAWn57rJFFMqJAdECw",
+  promo1990: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1990.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkwLnBuZyIsImlhdCI6MTc3ODYzMTIzMiwiZXhwIjoxODEwMTY3MjMyfQ.Jut6m4ydYcpZWvfnE7yOQEP3f311kjpSHwxu4FlUdDA",
+  promo1992: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1992.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkyLnBuZyIsImlhdCI6MTc3ODYzMTI0MCwiZXhwIjoxODEwMTY3MjQwfQ.W1HqyXiWa6aIwWi8Wtc2kWURiddipCYPj-BlBgIbzS0",
+  promo1999: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1999.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk5LnBuZyIsImlhdCI6MTc3ODYzMTcyMywiZXhwIjoxODEwMTY3NzIzfQ.zyR9FvL0Jzhy2yCK3gZLU-hrfRzQBXDZ4TdPHvGEGGk",
+  promo2000: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2000.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAwLnBuZyIsImlhdCI6MTc3ODYzMTI0NywiZXhwIjoxODEwMTY3MjQ3fQ.4nbVZftKYCmz4C04Y-Dhd8UwBm9xr__kJV6n05jntHc",
+  promo2002: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2002.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAyLnBuZyIsImlhdCI6MTc3ODYzMTI4MywiZXhwIjoxODEwMTY3MjgzfQ.PXaMF3Fx_BALMi6_PklnpldqcLaoptmqnBJtOY-vC5Y",
+  promo2003: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2003.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAzLnBuZyIsImlhdCI6MTc3ODYzMTMwMywiZXhwIjoxODEwMTY3MzAzfQ.CAkSfHAptHVUWR-xPC1GnkRorhpXHRk1M0Tk1VMvD0Y",
+  promo2006: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2006.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA2LnBuZyIsImlhdCI6MTc3ODYzMTMwOCwiZXhwIjoxODEwMTY3MzA4fQ.bVGg32wEO-LaZ10sBibbopn_EwgwUaT7k2WXklQoMNc",
+  promo2007: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2007.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA3LnBuZyIsImlhdCI6MTc3ODYzMTMyMCwiZXhwIjoxODEwMTY3MzIwfQ.E3hZBSMt2GZyAaDAvdE4m8URfj87pIYr3iw0LVZQVdY",
+  promo2009: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2009.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA5LnBuZyIsImlhdCI6MTc3ODYzMTMzMywiZXhwIjoxODEwMTY3MzMzfQ.G8jIPeLqpTMGU0wMVrxmmfhsOAwtWgC0hzjS1YERqTI",
+  promo2019: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2019.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDE5LnBuZyIsImlhdCI6MTc3ODYzMTMzOSwiZXhwIjoxODEwMTY3MzM5fQ.9eBEmcK357FBsiAhEbaL2bE4Pf-KdrqRpv3AA_xQPDk",
+  promo2021: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2021.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIxLnBuZyIsImlhdCI6MTc3ODYzMTM0NiwiZXhwIjoxODEwMTY3MzQ2fQ.v1mdTI0fWXOCjcaN75kYIXNPB-lFz3EcS_-DW7ZBakI",
+  promo2022: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2022.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIyLnBuZyIsImlhdCI6MTc3ODYzMTM1NiwiZXhwIjoxODEwMTY3MzU2fQ.onSKVVFFDKMEvUDGHQqhAHmBvgcpNXeuTqrTEMKQEfA",
+  promo2023: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2023.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIzLnBuZyIsImlhdCI6MTc3ODYzMTM2MSwiZXhwIjoxODEwMTY3MzYxfQ.CS6OZBQBl0LBRhbMP-v7jLT3_0vEspaV78tP34JmCag",
+  promo2024: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2024.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDI0LnBuZyIsImlhdCI6MTc3ODYzMTM2NywiZXhwIjoxODEwMTY3MzY3fQ.DvgAQabMMq11ByHw2-4_QZ9FzFYFv0oswGBjiTDg7kM",
+  promo2025: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2025.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDI1LnBuZyIsImlhdCI6MTc3ODYzMTM3NCwiZXhwIjoxODEwMTY3Mzc0fQ.h5tPN4l_TqP1o3BkUNE2ZRSj3JRfu6sW9Qnzt6btWAk",
+};
 
 export interface TimelineEvent {
   year: string;
@@ -124,7 +145,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1878",
     year: 1978,
     title: "Promoción 1978",
-    imageUrl: primeraPromo1978Image,
+    imageUrl: ASSET_URLS.primeraPromo1978,
     story: "La primera promoción del CEIJA 19. Un grupo pequeño y unido que abrió camino para todas las que vendrían. Se reunían los sábados a estudiar en la biblioteca pública del barrio.",
     graduates: [
       "ABALOS, Elvira Fidelma",
@@ -149,7 +170,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1981",
     year: 1981,
     title: "Promoción 1981",
-    imageUrl: promo1981Image,
+    imageUrl: ASSET_URLS.promo1981,
     story: "Recordada por organizar el primer viaje de egresados de la institución y por haber pintado el mural del patio central, todavía visible hoy.",
     graduates: [
       "ALVAREZ, Emma de las Mercedes",
@@ -186,7 +207,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1980",
     year: 1980,
     title: "Promoción 1980",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+1980",
+    imageUrl: ASSET_URLS.promo1980,
     story: "Tercera Promoción del Centro Educativo Nivel Secundario N° 61 CENS",
     graduates: [
       "ASTRADA, Alicia Haydee",
@@ -274,7 +295,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1985",
     year: 1985,
     title: "Promoción 1985",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+1985",
+    imageUrl: ASSET_URLS.promo1985,
     story: "PERITOS COMERCIALES",
     graduates: [
       "ANINO, Viviana Libertad",
@@ -338,7 +359,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1989",
     year: 1989,
     title: "Promoción 1989",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+1989",
+    imageUrl: ASSET_URLS.promo1989,
     story: "PERITOS COMERCIALES",
     graduates: [
       "BUOSI, Marcela Alejandra",
@@ -359,7 +380,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1990",
     year: 1990,
     title: "Promoción 1990",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+1990",
+    imageUrl: ASSET_URLS.promo1990,
     story: "PERITOS COMERCIALES",
     graduates: [
       "BRIZUELA, Anita Inés",
@@ -401,7 +422,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1992",
     year: 1992,
     title: "Promoción 1992",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+1992",
+    imageUrl: ASSET_URLS.promo1992,
     story: "PERITO COMERCIALES",
     graduates: [
       "DROCCO, Patricia Del Valle",
@@ -547,7 +568,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p1999",
     year: 1999,
     title: "Promoción 1999",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+1999",
+    imageUrl: ASSET_URLS.promo1999,
     story: "Promocion 1999 del CEIJA 19",
     graduates: [
       "SOSA, Ricardo Luis",
@@ -585,7 +606,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2000",
     year: 2000,
     title: "Promoción 2000",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2000",
+    imageUrl: ASSET_URLS.promo2000,
     story: "PERITOS COMERCIALES",
     graduates: [
       "ACEVEDO, Daniel Horacio",
@@ -645,7 +666,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2002",
     year: 2002,
     title: "Promoción 2002",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2002",
+    imageUrl: ASSET_URLS.promo2002,
     story: "Promocion 2002 del CEIJA 19",
     graduates: [
       "BARRIONUEVO, Marcelo Alejandro",
@@ -671,7 +692,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2003",
     year: 2003,
     title: "Promoción 2003",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2003",
+    imageUrl: ASSET_URLS.promo2003,
     story: "Promocion 2003 del CEIJA 19",
     graduates: [
       "CONTRERA, María Isabel",
@@ -735,7 +756,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2006",
     year: 2006,
     title: "Promoción 2006",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2006",
+    imageUrl: ASSET_URLS.promo2006,
     story: "ORTEGA, Mónica Deolinda (PERITO COMERCIAL)",
     graduates: [
       "CARDILE, David Ezequiel",
@@ -758,7 +779,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2007",
     year: 2007,
     title: "Promoción 2007",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2007",
+    imageUrl: ASSET_URLS.promo2007,
     story: "Promocion 2007 del CEIJA 19",
     graduates: [
       "GHIGO, Sergio Oscar",
@@ -799,7 +820,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2009",
     year: 2009,
     title: "Promoción 2009",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2009",
+    imageUrl: ASSET_URLS.promo2009,
     story: "Promocion 2009 del CEIJA 19",
     graduates: [
       "CUELLO, Bruno Ramiro",
@@ -999,7 +1020,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2019",
     year: 2019,
     title: "Promoción 2019",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2019",
+    imageUrl: ASSET_URLS.promo2019,
     story: "Promocion 2019 del CEIJA 19",
     graduates: [
       "GARCIA, Katherina Gabriela",
@@ -1044,7 +1065,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2021",
     year: 2021,
     title: "Promoción 2021",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2021",
+    imageUrl: ASSET_URLS.promo2021,
     story: "Promocion 2021 del CEIJA 19",
     graduates: [
       "CORSANIGO, Dahyana Nahir",
@@ -1065,7 +1086,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2022",
     year: 2022,
     title: "Promoción 2022",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2022",
+    imageUrl: ASSET_URLS.promo2022,
     story: "Promocion 2022 del CEIJA 19",
     graduates: [
       "RASSIA, Dahyana del Pilar",
@@ -1088,7 +1109,7 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2023",
     year: 2023,
     title: "Promoción 2023",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2023",
+    imageUrl: ASSET_URLS.promo2023,
     story: "Promocion 2023 del CEIJA 19",
     graduates: [
       "GOMEZ, Maricel Carina",
@@ -1100,10 +1121,27 @@ const PROMOCIONES_RAW: Promocion[] = [
     id: "p2024",
     year: 2024,
     title: "Promoción 2024",
-    imageUrl: "https://placehold.co/1200x800?text=Promocion+2024",
+    imageUrl: ASSET_URLS.promo2024,
     story: "Promocion 2024 del CEIJA 19",
     graduates: [
       "AGUIRRE, Jésica Melina",
+    ],
+  },
+  {
+    id: "p2025",
+    year: 2025,
+    title: "Promoción 2025",
+    imageUrl: ASSET_URLS.promo2025,
+    story: "Promocion 2025 del CEIJA 19",
+    graduates: [
+      "ORTIZ QUIROGA, Jeremias Alexander",
+      "ORDOÑEZ, Sandro Javier",
+      "ALMIRON, Gustavo Daniel",
+      "DANZO, Daniel Oscar",
+      "GONZALEZ, Rosana Ermelinda",
+      "PONZONI, Mariana Alejandra",
+      "SANABRIA, Sofia Ayelen",
+      "FERRERO, Carlos Daniel",
     ],
   },
 ];
@@ -1113,7 +1151,7 @@ export const PROMOCIONES: Promocion[] = [...PROMOCIONES_RAW].sort((a, b) => a.ye
 export const GALLERY: GalleryItem[] = [
   {
     id: "g1", type: "photo",
-    src: creacionEscuelaImage,
+    src: ASSET_URLS.creacionEscuela,
     caption: "Creación de la escuela", year: "1976",
     location: "",
     photographer: "Archivo institucional CEIJA 19",

@@ -37,3 +37,6 @@ dist-ssr
 !.env.example
 tsconfig.tsbuildinfo
 .git.broken
+
+#assets
+src/assets/*

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Camera, Users, Heart } from "lucide-react";
 import { Navbar } from "@/components/museum/Navbar";
 import { Footer } from "@/components/museum/Footer";
-import heroImg from "@/assets/main-image.png";
+const HERO_IMAGE_URL = "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/main-image.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9tYWluLWltYWdlLnBuZyIsImlhdCI6MTc3ODYzMTQ0NSwiZXhwIjoxODEwMTY3NDQ1fQ.tGutsik3EuqxKerlJCVZgJfptrVdSc9eGiRNOJWObzY";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -25,7 +25,7 @@ function HomePage() {
         <section className="relative overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src={heroImg}
+              src={HERO_IMAGE_URL}
               alt="Edificio histórico del CEIJA 19"
               className="w-full h-full object-cover animate-slow-zoom"
               width={1920}
