@@ -119,18 +119,20 @@ function AportarPage() {
         submittedAt: new Date().toISOString(),
       });
 
-      const { error } = await supabase.from("museum_contributions").insert({
+      // Email enviado con éxito — mostrar estado de éxito inmediatamente
+      setSuccess(true);
+      form.reset();
+      toast.success("¡Gracias! Tu aporte fue recibido.");
+
+      // Guardar en Supabase de forma no-bloqueante (fallo silencioso)
+      supabase.from("museum_contributions").insert({
         full_name: parsed.data.full_name,
         relationship: parsed.data.relationship,
         contact_phone: contactPhone,
         story: parsed.data.story,
+      }).then(({ error }) => {
+        if (error) console.warn("[Supabase] No se pudo guardar el aporte:", error.message);
       });
-
-      if (error) throw error;
-
-      setSuccess(true);
-      form.reset();
-      toast.success("¡Gracias! Tu aporte fue recibido.");
     } catch (err) {
       console.error(err);
       toast.error("No pudimos enviar tu aporte. Intentá nuevamente en un momento.");
