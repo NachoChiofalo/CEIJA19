@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Heart, Send, Paperclip, Loader2, CheckCircle2 } from "lucide-react";
+import { Heart, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Navbar } from "@/components/museum/Navbar";
@@ -22,20 +22,64 @@ export const Route = createFileRoute("/aportar")({
 const contributionSchema = z.object({
   full_name: z.string().trim().min(2, "Ingresá tu nombre completo").max(200),
   relationship: z.string().trim().min(2, "Indicá tu vínculo con la escuela").max(200),
-  contact_email: z
+  contact_phone: z
     .string()
     .trim()
-    .email("Email inválido")
-    .max(320)
+    .min(7, "Telefono demasiado corto")
+    .max(50, "Telefono demasiado largo")
     .optional()
     .or(z.literal("")),
   story: z.string().trim().min(10, "Contanos al menos un poquito (mínimo 10 caracteres)").max(5000),
 });
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.EMAILJS_PUBLIC_KEY;
+const EMAILJS_SEND_URL = "https://api.emailjs.com/api/v1.0/email/send";
+
+type ContributionEmailParams = {
+  fullName: string;
+  relationship: string;
+  contactPhone: string | null;
+  story: string;
+  pageUrl: string;
+  submittedAt: string;
+};
+
+async function sendContributionEmail(params: ContributionEmailParams) {
+  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+    throw new Error("Missing EmailJS environment variables.");
+  }
+
+  const response = await fetch(EMAILJS_SEND_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      service_id: EMAILJS_SERVICE_ID,
+      template_id: EMAILJS_TEMPLATE_ID,
+      user_id: EMAILJS_PUBLIC_KEY,
+      template_params: {
+        full_name: params.fullName,
+        relationship: params.relationship,
+        contact_phone: params.contactPhone || "",
+        story: params.story,
+        page_url: params.pageUrl,
+        submitted_at: params.submittedAt,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(message || "EmailJS request failed.");
+  }
+}
+
 function AportarPage() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [fileName, setFileName] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -47,7 +91,7 @@ function AportarPage() {
     const parsed = contributionSchema.safeParse({
       full_name: formData.get("full_name"),
       relationship: formData.get("relationship"),
-      contact_email: formData.get("contact_email") || "",
+      contact_phone: formData.get("contact_phone") || "",
       story: formData.get("story"),
     });
 
@@ -56,20 +100,29 @@ function AportarPage() {
       return;
     }
 
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      toast.error("Falta configurar EmailJS para enviar el aporte.");
+      return;
+    }
+
     setSubmitting(true);
 
     try {
-      // Note: file attachments are noted in the message for now (no storage bucket configured).
-      const file = formData.get("attachment") as File | null;
-      const attachmentNote = file && file.size > 0
-        ? `[Adjunto pendiente de subir: ${file.name} — ${(file.size / 1024).toFixed(1)} KB]`
-        : null;
+      const contactPhone = parsed.data.contact_phone?.trim() || null;
+
+      await sendContributionEmail({
+        fullName: parsed.data.full_name,
+        relationship: parsed.data.relationship,
+        contactPhone,
+        story: parsed.data.story,
+        pageUrl: typeof window !== "undefined" ? window.location.href : "",
+        submittedAt: new Date().toISOString(),
+      });
 
       const { error } = await supabase.from("museum_contributions").insert({
         full_name: parsed.data.full_name,
         relationship: parsed.data.relationship,
-        contact_email: parsed.data.contact_email || null,
-        attachment_url: attachmentNote,
+        contact_phone: contactPhone,
         story: parsed.data.story,
       });
 
@@ -77,7 +130,6 @@ function AportarPage() {
 
       setSuccess(true);
       form.reset();
-      setFileName(null);
       toast.success("¡Gracias! Tu aporte fue recibido.");
     } catch (err) {
       console.error(err);
@@ -116,8 +168,8 @@ function AportarPage() {
                 ¡Gracias por tu aporte!
               </h2>
               <p className="mt-3 text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-                Recibimos tu mensaje y lo vamos a revisar pronto. Si dejaste tu email, nos
-                pondremos en contacto si necesitamos más detalles.
+                Recibimos tu mensaje y lo vamos a revisar pronto. Si dejaste tu telefono, nos
+                pondremos en contacto si necesitamos mas detalles.
               </p>
               <button
                 onClick={() => setSuccess(false)}
@@ -159,39 +211,17 @@ function AportarPage() {
               </div>
 
               <div>
-                <label htmlFor="contact_email" className="block text-sm font-medium text-foreground mb-2">
-                  Email de contacto <span className="text-muted-foreground font-normal">(opcional)</span>
+                <label htmlFor="contact_phone" className="block text-sm font-medium text-foreground mb-2">
+                  Telefono de contacto <span className="text-muted-foreground font-normal">(opcional)</span>
                 </label>
                 <input
-                  id="contact_email"
-                  name="contact_email"
-                  type="email"
-                  maxLength={320}
+                  id="contact_phone"
+                  name="contact_phone"
+                  type="tel"
+                  inputMode="tel"
+                  maxLength={50}
                   className="w-full rounded-md border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                  placeholder="tunombre@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="attachment" className="block text-sm font-medium text-foreground mb-2">
-                  Archivo adjunto <span className="text-muted-foreground font-normal">(foto o documento, opcional)</span>
-                </label>
-                <label
-                  htmlFor="attachment"
-                  className="flex items-center gap-3 px-4 py-3 rounded-md border-2 border-dashed border-border hover:border-accent hover:bg-secondary/40 cursor-pointer transition-all"
-                >
-                  <Paperclip className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">
-                    {fileName || "Elegí un archivo (JPG, PNG, PDF...)"}
-                  </span>
-                </label>
-                <input
-                  id="attachment"
-                  name="attachment"
-                  type="file"
-                  accept="image/*,application/pdf"
-                  className="sr-only"
-                  onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}
+                  placeholder="Tu telefono"
                 />
               </div>
 
@@ -206,8 +236,11 @@ function AportarPage() {
                   rows={6}
                   maxLength={5000}
                   className="w-full rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all resize-y"
-                  placeholder="Contanos lo que recordás: una historia, un nombre, un momento que valga la pena preservar..."
+                  placeholder="Contanos lo que recordas: una historia, un nombre, un momento que valga la pena preservar..."
                 />
+                <p className="mt-2 text-xs text-muted-foreground">
+                  Si queres compartir un archivo, pega el link dentro del texto.
+                </p>
               </div>
 
               <button

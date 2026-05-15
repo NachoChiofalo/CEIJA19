@@ -86,6 +86,7 @@ export type Database = {
         Row: {
           attachment_url: string | null
           contact_email: string | null
+          contact_phone: string | null
           created_at: string
           full_name: string
           id: string
@@ -95,6 +96,7 @@ export type Database = {
         Insert: {
           attachment_url?: string | null
           contact_email?: string | null
+          contact_phone?: string | null
           created_at?: string
           full_name: string
           id?: string
@@ -104,6 +106,7 @@ export type Database = {
         Update: {
           attachment_url?: string | null
           contact_email?: string | null
+          contact_phone?: string | null
           created_at?: string
           full_name?: string
           id?: string
