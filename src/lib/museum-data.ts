@@ -1484,14 +1484,6 @@ const GALLERY_ALBUMS: GalleryItem[] = [
     tags: ["album", "2009"],
   },
   {
-    id: "g2010-1",
-    type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2010-1.png",
-    caption: "Album 2010 - Foto 1",
-    year: "2010",
-    tags: ["album", "2010"],
-  },
-  {
     id: "g2010-2",
     type: "photo",
     src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2010-2.png",
