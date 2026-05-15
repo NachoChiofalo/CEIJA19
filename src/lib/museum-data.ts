@@ -3,33 +3,33 @@
 
 
 const ASSET_URLS = {
-  creacionEscuela: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/creacionEscuela.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9jcmVhY2lvbkVzY3VlbGEucG5nIiwiaWF0IjoxNzc4NjMxNDA5LCJleHAiOjE4MTAxNjc0MDl9.2yw7u35zrjxOk_OklV6k00AWIKhfKeWSBgPFCfEjAAA",
-  primeraPromo1978: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/primeraPromo1978.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9wcmltZXJhUHJvbW8xOTc4LnBuZyIsImlhdCI6MTc3ODYzMTQ1MywiZXhwIjoxODEwMTY3NDUzfQ.4dSmVxwY6oNYc4MdciDAgq87VC1slwZY19K2EGn6gck",
-  promo1981: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/promo1981.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9wcm9tbzE5ODEucG5nIiwiaWF0IjoxNzc4NjMxNDYyLCJleHAiOjE4MTAxNjc0NjJ9.Zm-1oxBjbn8jV4GuNSCPYYo4r0qpKNGeMPnkOrYtwjs",
-  promo1980: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1980.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgwLnBuZyIsImlhdCI6MTc3ODYzMTIxMywiZXhwIjoxODEwMTY3MjEzfQ.53Q2IieUYmrlyJHa8AWvtuoM8IPrPNlvXd9e0w__Jfc",
-  promo1985: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1985.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg1LnBuZyIsImlhdCI6MTc3ODYzMTIxOCwiZXhwIjoxODEwMTY3MjE4fQ.5VLTwdxA5VxMzCmyiEJEVaaevQ9pdpk-UTmftbntgTk",
-  promo1988: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1988.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg4LnBuZyIsImlhdCI6MTc3ODYzNDU4OSwiZXhwIjoxODEwMTcwNTg5fQ.UewLqB_gm_74bCmfPzEjx3LU5pY-vD4dKAKX4pdlv6E",
-  promo1989: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1989.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg5LnBuZyIsImlhdCI6MTc3ODYzMTIyNiwiZXhwIjoxODEwMTY3MjI2fQ.nSd8yhScsyBGunar1rNQntApBkAWn57rJFFMqJAdECw",
-  promo1990: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1990.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkwLnBuZyIsImlhdCI6MTc3ODYzMTIzMiwiZXhwIjoxODEwMTY3MjMyfQ.Jut6m4ydYcpZWvfnE7yOQEP3f311kjpSHwxu4FlUdDA",
-  promo1991: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1991.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkxLnBuZyIsImlhdCI6MTc3ODg2NDQ2MywiZXhwIjoxODEwNDAwNDYzfQ.nfj69BSyoo07G39G9QfeSs-W7G69n1Atj_lbe7fFluI",
-  promo1992: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1992.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkyLnBuZyIsImlhdCI6MTc3ODYzMTI0MCwiZXhwIjoxODEwMTY3MjQwfQ.W1HqyXiWa6aIwWi8Wtc2kWURiddipCYPj-BlBgIbzS0",
-  promo1996: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1996.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk2LnBuZyIsImlhdCI6MTc3ODg2NDQyMCwiZXhwIjoxODEwNDAwNDIwfQ.UUdm3eGtGhWb1lQT8a9vkWiQdyZKu8ZMuS4slJ2mUt4",
-  promo1997: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1997.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk3LnBuZyIsImlhdCI6MTc3ODYzNDU5OSwiZXhwIjoxODEwMTcwNTk5fQ.II05k8s7cmEquPajFlMJ6sf1N-V_fOMqoJb2pPFV-OI",
-  promo1998: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1998.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk4LnBuZyIsImlhdCI6MTc3ODg2NDM3MywiZXhwIjoxODEwNDAwMzczfQ._HIgdLBQUgqlkCEYX9SOCJGk55fHmvfG95VJZJZvvcs",
-  promo1999: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1999.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk5LnBuZyIsImlhdCI6MTc3ODYzMTcyMywiZXhwIjoxODEwMTY3NzIzfQ.zyR9FvL0Jzhy2yCK3gZLU-hrfRzQBXDZ4TdPHvGEGGk",
-  promo2000: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2000.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAwLnBuZyIsImlhdCI6MTc3ODYzMTI0NywiZXhwIjoxODEwMTY3MjQ3fQ.4nbVZftKYCmz4C04Y-Dhd8UwBm9xr__kJV6n05jntHc",
-  promo2002: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2002.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAyLnBuZyIsImlhdCI6MTc3ODYzMTI4MywiZXhwIjoxODEwMTY3MjgzfQ.PXaMF3Fx_BALMi6_PklnpldqcLaoptmqnBJtOY-vC5Y",
-  promo2003: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2003.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAzLnBuZyIsImlhdCI6MTc3ODYzMTMwMywiZXhwIjoxODEwMTY3MzAzfQ.CAkSfHAptHVUWR-xPC1GnkRorhpXHRk1M0Tk1VMvD0Y",
-  promo2006: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2006.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA2LnBuZyIsImlhdCI6MTc3ODYzMTMwOCwiZXhwIjoxODEwMTY3MzA4fQ.bVGg32wEO-LaZ10sBibbopn_EwgwUaT7k2WXklQoMNc",
-  promo2007: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2007.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA3LnBuZyIsImlhdCI6MTc3ODYzMTMyMCwiZXhwIjoxODEwMTY3MzIwfQ.E3hZBSMt2GZyAaDAvdE4m8URfj87pIYr3iw0LVZQVdY",
-  promo2009: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2009.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA5LnBuZyIsImlhdCI6MTc3ODYzMTMzMywiZXhwIjoxODEwMTY3MzMzfQ.G8jIPeLqpTMGU0wMVrxmmfhsOAwtWgC0hzjS1YERqTI",
-  promo2010: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2010.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDEwLnBuZyIsImlhdCI6MTc3ODg2NDIxOSwiZXhwIjoxODEwNDAwMjE5fQ.hOvl1jA94UlgO2EUvVZKtXHaNSNBigEnD_tLQ_RQQrk",
-  promo2019: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2019.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDE5LnBuZyIsImlhdCI6MTc3ODYzMTMzOSwiZXhwIjoxODEwMTY3MzM5fQ.9eBEmcK357FBsiAhEbaL2bE4Pf-KdrqRpv3AA_xQPDk",
-  promo2021: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2021.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIxLnBuZyIsImlhdCI6MTc3ODYzMTM0NiwiZXhwIjoxODEwMTY3MzQ2fQ.v1mdTI0fWXOCjcaN75kYIXNPB-lFz3EcS_-DW7ZBakI",
-  promo2022: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2022.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIyLnBuZyIsImlhdCI6MTc3ODYzMTM1NiwiZXhwIjoxODEwMTY3MzU2fQ.onSKVVFFDKMEvUDGHQqhAHmBvgcpNXeuTqrTEMKQEfA",
-  promo2023: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2023.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIzLnBuZyIsImlhdCI6MTc3ODYzMTM2MSwiZXhwIjoxODEwMTY3MzYxfQ.CS6OZBQBl0LBRhbMP-v7jLT3_0vEspaV78tP34JmCag",
-  promo2024: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2024.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDI0LnBuZyIsImlhdCI6MTc3ODYzMTM2NywiZXhwIjoxODEwMTY3MzY3fQ.DvgAQabMMq11ByHw2-4_QZ9FzFYFv0oswGBjiTDg7kM",
-  promo2025: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2025.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDI1LnBuZyIsImlhdCI6MTc3ODYzMTM3NCwiZXhwIjoxODEwMTY3Mzc0fQ.h5tPN4l_TqP1o3BkUNE2ZRSj3JRfu6sW9Qnzt6btWAk",
+  creacionEscuela: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/creacionEscuela.png",
+  primeraPromo1978: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/primeraPromo1978.png",
+  promo1981: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/promo1981.png",
+  promo1980: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1980.png",
+  promo1985: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1985.png",
+  promo1988: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1988.png",
+  promo1989: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1989.png",
+  promo1990: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1990.png",
+  promo1991: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1991.png",
+  promo1992: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1992.png",
+  promo1996: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1996.png",
+  promo1997: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1997.png",
+  promo1998: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1998.png",
+  promo1999: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1999.png",
+  promo2000: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2000.png",
+  promo2002: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2002.png",
+  promo2003: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2003.png",
+  promo2006: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2006.png",
+  promo2007: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2007.png",
+  promo2009: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2009.png",
+  promo2010: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2010.png",
+  promo2019: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2019.png",
+  promo2021: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2021.png",
+  promo2022: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2022.png",
+  promo2023: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2023.png",
+  promo2024: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2024.png",
+  promo2025: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2025.png",
 };
 
 export interface TimelineEvent {
@@ -1158,7 +1158,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1978-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1978-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTc4LTEucG5nIiwiaWF0IjoxNzc4NjMzOTI1LCJleHAiOjE4MTAxNjk5MjV9.IBn6lxblL_xahri4XaZNcM8RZIv82ua-nCGxMI58LX8",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1978-1.png",
     caption: "Album 1978 - Foto 1",
     year: "1978",
     tags: ["album", "1978"],
@@ -1166,7 +1166,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1978-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1978-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTc4LTIucG5nIiwiaWF0IjoxNzc4NjMzOTM0LCJleHAiOjE4MTAxNjk5MzR9.xVxzwP94E6VjDQx7wZh4bofauWQTTvKHQrzd5-IaYhQ",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1978-2.png",
     caption: "Album 1978 - Foto 2",
     year: "1978",
     tags: ["album", "1978"],
@@ -1174,7 +1174,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1978-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1978-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTc4LTMucG5nIiwiaWF0IjoxNzc4NjMzOTQ0LCJleHAiOjE4MTAxNjk5NDR9.PpbQxpqH2v7raqHTjDszTr14k5p6LmbV1k0gFEVDLFM",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1978-3.png",
     caption: "Album 1978 - Foto 3",
     year: "1978",
     tags: ["album", "1978"],
@@ -1182,7 +1182,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1978-4",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1978-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTc4LTQucG5nIiwiaWF0IjoxNzc4NjMzOTUwLCJleHAiOjE4MTAxNjk5NTB9.PRSDE358i3T4s5VN4Sy1sLnnke4wcQCc2oCzJm08ooo",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1978-4.png",
     caption: "Album 1978 - Foto 4",
     year: "1978",
     tags: ["album", "1978"],
@@ -1190,7 +1190,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1980-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1980-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgwLTEucG5nIiwiaWF0IjoxNzc4NjMzOTY0LCJleHAiOjE4MTAxNjk5NjR9.FTFCMBiAnxlZFJp5TogFbECQ8N1lzKzJSKjmLKrTwLo",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1980-1.png",
     caption: "Album 1980 - Foto 1",
     year: "1980",
     tags: ["album", "1980"],
@@ -1198,7 +1198,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1980-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1980-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgwLTIucG5nIiwiaWF0IjoxNzc4NjMzOTczLCJleHAiOjE4MTAxNjk5NzN9.4QfBax_6m1SH_QRWBQIzwDgqvtKKxt2soIuyKy_Apzs",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1980-2.png",
     caption: "Album 1980 - Foto 2",
     year: "1980",
     tags: ["album", "1980"],
@@ -1206,7 +1206,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1980-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1980-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgwLTMucG5nIiwiaWF0IjoxNzc4NjMzOTgwLCJleHAiOjE4MTAxNjk5ODB9.XLlh3bo1ooIe_CB7Cft_DI15psUd8Wyp1zvuycn92Ig",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1980-3.png",
     caption: "Album 1980 - Foto 3",
     year: "1980",
     tags: ["album", "1980"],
@@ -1214,7 +1214,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1981-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1981-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgxLTEucG5nIiwiaWF0IjoxNzc4NjMzOTk0LCJleHAiOjE4MTAxNjk5OTR9.g2zrX4LZBwAfRRNKT9nHLHIfxVO15fTRzcy3uIoL-nQ",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1981-1.png",
     caption: "Album 1981 - Foto 1",
     year: "1981",
     tags: ["album", "1981"],
@@ -1222,7 +1222,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1981-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1981-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgxLTIucG5nIiwiaWF0IjoxNzc4NjM0MDA4LCJleHAiOjE4MTAxNzAwMDh9.bHH2DuBG8w8Br_7SsFUo75tDyrkn4woSd9f1-IgS5Co",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1981-2.png",
     caption: "Album 1981 - Foto 2",
     year: "1981",
     tags: ["album", "1981"],
@@ -1230,7 +1230,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1981-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1981-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgxLTMucG5nIiwiaWF0IjoxNzc4NjM0MDEzLCJleHAiOjE4MTAxNzAwMTN9._OzLD-C1CbBeHPkp6A0eZuB04zk1MwRW3c8HKTsfdM0",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1981-3.png",
     caption: "Album 1981 - Foto 3",
     year: "1981",
     tags: ["album", "1981"],
@@ -1238,7 +1238,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1983-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1983-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgzLTEucG5nIiwiaWF0IjoxNzc4NjM0MDQ5LCJleHAiOjE4MTAxNzAwNDl9.EO-xSQa4ZWgbbFJxRX-g7gbIIfIsmbL2jQKLhXzsdxY",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1983-1.png",
     caption: "Album 1983 - Foto 1",
     year: "1983",
     tags: ["album", "1983"],
@@ -1246,7 +1246,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1983-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1983-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgzLTIucG5nIiwiaWF0IjoxNzc4NjM0MDY3LCJleHAiOjE4MTAxNzAwNjd9.Y_3jqvAmZORW2m6HgMXNZooIlLEwFynpSy_VDlAceBs",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1983-2.png",
     caption: "Album 1983 - Foto 2",
     year: "1983",
     tags: ["album", "1983"],
@@ -1254,7 +1254,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1983-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1983-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTgzLTMucG5nIiwiaWF0IjoxNzc4NjM0MDc5LCJleHAiOjE4MTAxNzAwNzl9.Tb4kyDEZnoreFQ0PpYPURDBtXmFKZJRlLvzzpXcmBa4",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1983-3.png",
     caption: "Album 1983 - Foto 3",
     year: "1983",
     tags: ["album", "1983"],
@@ -1262,7 +1262,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1985-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1985-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg1LTEucG5nIiwiaWF0IjoxNzc4NjM0MDg5LCJleHAiOjE4MTAxNzAwODl9.KBZmMSAifDlQmugCZrpycoiasvuP_hGMN66qo5Ppqzw",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1985-1.png",
     caption: "Album 1985 - Foto 1",
     year: "1985",
     tags: ["album", "1985"],
@@ -1270,7 +1270,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1989-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1989-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg5LTEucG5nIiwiaWF0IjoxNzc4NjM0MDk4LCJleHAiOjE4MTAxNzAwOTh9.3Qwx6KOhD1vOd73yCbZO2OUQlKWcYlXm2sLGFO0G0To",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1989-1.png",
     caption: "Album 1989 - Foto 1",
     year: "1989",
     tags: ["album", "1989"],
@@ -1278,7 +1278,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1989-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1989-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg5LTIucG5nIiwiaWF0IjoxNzc4NjM0MTA3LCJleHAiOjE4MTAxNzAxMDd9.kzTydkV0g0klza5GI3l5ESONwa-K2pjR8hphOUZWPHQ",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1989-2.png",
     caption: "Album 1989 - Foto 2",
     year: "1989",
     tags: ["album", "1989"],
@@ -1286,7 +1286,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1989-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1989-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTg5LTMucG5nIiwiaWF0IjoxNzc4NjM0MTI0LCJleHAiOjE4MTAxNzAxMjR9.CnE-KwAckqUKP4I7vr64HJTS_0geAyCyzsGbW1ioR_M",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1989-3.png",
     caption: "Album 1989 - Foto 3",
     year: "1989",
     tags: ["album", "1989"],
@@ -1294,7 +1294,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1990-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1990-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkwLTEucG5nIiwiaWF0IjoxNzc4NjM0MTcwLCJleHAiOjE4MTAxNzAxNzB9.Ji9qK8pahKX2ienABVJwu69F_UCfGgYKTNvVxZIuqDk",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1990-1.png",
     caption: "Album 1990 - Foto 1",
     year: "1990",
     tags: ["album", "1990"],
@@ -1302,7 +1302,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1990-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1990-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkwLTIucG5nIiwiaWF0IjoxNzc4NjM0MTc2LCJleHAiOjE4MTAxNzAxNzZ9.W8iEQBNbSzPFMbhI2R22HuG5QbAzOxVy-8OrkJG-l-w",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1990-2.png",
     caption: "Album 1990 - Foto 2",
     year: "1990",
     tags: ["album", "1990"],
@@ -1310,7 +1310,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1990-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1990-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkwLTMucG5nIiwiaWF0IjoxNzc4NjM0MTg5LCJleHAiOjE4MTAxNzAxODl9._29Tuh5Ww4A7PCCpjjSwO8-VUxuWLPyFvFFxITDuiaQ",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1990-3.png",
     caption: "Album 1990 - Foto 3",
     year: "1990",
     tags: ["album", "1990"],
@@ -1318,7 +1318,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1990-4",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1990-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkwLTQucG5nIiwiaWF0IjoxNzc4NjM0MTk4LCJleHAiOjE4MTAxNzAxOTh9.0yyr6qTp9XmjbHIiRvimHT4zZn6rKQ45Kjv4p1p1S4w",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1990-4.png",
     caption: "Album 1990 - Foto 4",
     year: "1990",
     tags: ["album", "1990"],
@@ -1326,7 +1326,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1991-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1991-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkxLTEucG5nIiwiaWF0IjoxNzc4ODY0NDc3LCJleHAiOjE4MTA0MDA0Nzd9.JQqAJt9ow2Kl9H7dJAKxbzMex8HzN0qyzovdXIgS9iY",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1991-1.png",
     caption: "Album 1991 - Foto 1",
     year: "1991",
     tags: ["album", "1991"],
@@ -1334,7 +1334,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1991-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1991-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkxLTIucG5nIiwiaWF0IjoxNzc4ODY0NDg0LCJleHAiOjE4MTA0MDA0ODR9.nO278zErxNg0IHFi7Mc0QY9T4lXAQ4po3q1RMBAiTtg",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1991-2.png",
     caption: "Album 1991 - Foto 2",
     year: "1991",
     tags: ["album", "1991"],
@@ -1342,7 +1342,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1992-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1992-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTkyLTEucG5nIiwiaWF0IjoxNzc4NjM0MjA1LCJleHAiOjE4MTAxNzAyMDV9.VKyk7HpkVBntg4Ecgxw_xhKzAq-unDMpAuvoBECCXh0",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1992-1.png",
     caption: "Album 1992 - Foto 1",
     year: "1992",
     tags: ["album", "1992"],
@@ -1350,7 +1350,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1996-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1996-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk2LTEucG5nIiwiaWF0IjoxNzc4ODY0NDM0LCJleHAiOjE4MTA0MDA0MzR9.ww7MLGtHn-4u17zxY3-8HqfNyxVZ2avMzSdH56eFl2I",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1996-1.png",
     caption: "Album 1996 - Foto 1",
     year: "1996",
     tags: ["album", "1996"],
@@ -1358,7 +1358,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1998-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1998-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk4LTEucG5nIiwiaWF0IjoxNzc4ODY0MzkxLCJleHAiOjE4MTA0MDAzOTF9.jHVJCIZ7HyFMYgNnXgbzyJFY7ICweGPRFEn7dmH4c9U",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1998-1.png",
     caption: "Album 1998 - Foto 1",
     year: "1998",
     tags: ["album", "1998"],
@@ -1366,7 +1366,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g1998-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/1998-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8xOTk4LTIucG5nIiwiaWF0IjoxNzc4ODY0Mzk4LCJleHAiOjE4MTA0MDAzOTh9.vfRQ8P8f4bO66OZfmazYPRl-bRT7u8pbgTyU-HBqpTY",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/1998-2.png",
     caption: "Album 1998 - Foto 2",
     year: "1998",
     tags: ["album", "1998"],
@@ -1374,7 +1374,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2000-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2000-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAwLTEucG5nIiwiaWF0IjoxNzc4ODY0MzU0LCJleHAiOjE4MTA0MDAzNTR9.5Y2SigtgQACc2-ZEXd0wuAAgy-L5LczASFSlbep7KVc",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2000-1.png",
     caption: "Album 2000 - Foto 1",
     year: "2000",
     tags: ["album", "2000"],
@@ -1382,7 +1382,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2002-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2002-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAyLTEucG5nIiwiaWF0IjoxNzc4NjM0MjE5LCJleHAiOjE4MTAxNzAyMTl9.ZITl13EB1GFlBT2giQXkBeglmx2uQogSjozrhAp5UHM",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2002-1.png",
     caption: "Album 2002 - Foto 1",
     year: "2002",
     tags: ["album", "2002"],
@@ -1390,7 +1390,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2002-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2002-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAyLTIucG5nIiwiaWF0IjoxNzc4NjM0MjQ4LCJleHAiOjE4MTAxNzAyNDh9.nfMXTN6qqG9bNAK3AcyRS-16DF6gvDbIdfD-mbJxn2A",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2002-2.png",
     caption: "Album 2002 - Foto 2",
     year: "2002",
     tags: ["album", "2002"],
@@ -1398,7 +1398,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2002-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2002-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAyLTMucG5nIiwiaWF0IjoxNzc4NjM0MjU0LCJleHAiOjE4MTAxNzAyNTR9.IZE22iEZLcs-fqSuIVqS4WBwd83oTM33pbPVFMyXZEs",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2002-3.png",
     caption: "Album 2002 - Foto 3",
     year: "2002",
     tags: ["album", "2002"],
@@ -1406,7 +1406,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2003-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2003-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAzLTEucG5nIiwiaWF0IjoxNzc4NjM0MjYxLCJleHAiOjE4MTAxNzAyNjF9.GcCBsKtUGhB9cPepb3zH-KHB9wwFzhMkCst2yxMSenY",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2003-1.png",
     caption: "Album 2003 - Foto 1",
     year: "2003",
     tags: ["album", "2003"],
@@ -1414,7 +1414,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2003-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2003-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAzLTIucG5nIiwiaWF0IjoxNzc4NjM0MjY5LCJleHAiOjE4MTAxNzAyNjl9.LjPwor7oRptCI90GS3EMcqyo64IFR1N9QowMCjWcy34",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2003-2.png",
     caption: "Album 2003 - Foto 2",
     year: "2003",
     tags: ["album", "2003"],
@@ -1422,7 +1422,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2003-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2003-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAzLTMucG5nIiwiaWF0IjoxNzc4NjM0MzA5LCJleHAiOjE4MTAxNzAzMDl9.7px_a_q5jxG8teDddgZPeQ4dqOxQenBsQpNQUskWb9s",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2003-3.png",
     caption: "Album 2003 - Foto 3",
     year: "2003",
     tags: ["album", "2003"],
@@ -1430,7 +1430,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2003-4",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2003-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDAzLTQucG5nIiwiaWF0IjoxNzc4NjM0MzI0LCJleHAiOjE4MTAxNzAzMjR9.na20tlmaWwwlDGTRdlXIU0rEptQCuXTNmfipjCacN2Y",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2003-4.png",
     caption: "Album 2003 - Foto 4",
     year: "2003",
     tags: ["album", "2003"],
@@ -1438,7 +1438,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2007-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2007-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA3LTEucG5nIiwiaWF0IjoxNzc4NjM0MzQwLCJleHAiOjE4MTAxNzAzNDB9.xslU-FaelGklmHIZ3wa6RkxYbqiowFWR6S37k45yza8",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2007-1.png",
     caption: "Album 2007 - Foto 1",
     year: "2007",
     tags: ["album", "2007"],
@@ -1446,7 +1446,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2007-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2007-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA3LTIucG5nIiwiaWF0IjoxNzc4NjM0MzQ3LCJleHAiOjE4MTAxNzAzNDd9.WG1EbeOF4WumMgYamtwbPUxaOdqetTprGcmknZSWToE",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2007-2.png",
     caption: "Album 2007 - Foto 2",
     year: "2007",
     tags: ["album", "2007"],
@@ -1454,7 +1454,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2009-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2009-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA5LTEucG5nIiwiaWF0IjoxNzc4NjM0MzYxLCJleHAiOjE4MTAxNzAzNjF9.c-GFMibWfqjGHkQ-BLd4D-WsyXQiWajtQ2z3bss6HRk",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2009-1.png",
     caption: "Album 2009 - Foto 1",
     year: "2009",
     tags: ["album", "2009"],
@@ -1462,7 +1462,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2009-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2009-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA5LTIucG5nIiwiaWF0IjoxNzc4NjM0Mzg2LCJleHAiOjE4MTAxNzAzODZ9.tn-NLEKLjfh0e6Nwc3-ajClMJTOhojAnCQqYrqONkWM",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2009-2.png",
     caption: "Album 2009 - Foto 2",
     year: "2009",
     tags: ["album", "2009"],
@@ -1470,7 +1470,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2009-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2009-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA5LTMucG5nIiwiaWF0IjoxNzc4NjM0NDAyLCJleHAiOjE4MTAxNzA0MDJ9.UA3rHUvQkNoPmL_0SF1_a5K4cjhamfJ_lKbX15ETRxA",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2009-3.png",
     caption: "Album 2009 - Foto 3",
     year: "2009",
     tags: ["album", "2009"],
@@ -1478,7 +1478,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2009-4",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2009-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDA5LTQucG5nIiwiaWF0IjoxNzc4NjM0NDA4LCJleHAiOjE4MTAxNzA0MDh9.FBmw_SMjdy0Ztjb8CsW2YcWjuJeM9GmvpA5isNGgU1U",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2009-4.png",
     caption: "Album 2009 - Foto 4",
     year: "2009",
     tags: ["album", "2009"],
@@ -1486,7 +1486,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2010-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2010-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDEwLTEucG5nIiwiaWF0IjoxNzc4NjM0NDE1LCJleHAiOjE4MTAxNzA0MTV9.BeF1kQqjV68jb7TZnewmJG1ew54INkXj0d7MBISbMws",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2010-1.png",
     caption: "Album 2010 - Foto 1",
     year: "2010",
     tags: ["album", "2010"],
@@ -1494,7 +1494,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2010-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2010-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDEwLTIucG5nIiwiaWF0IjoxNzc4NjM0NDIxLCJleHAiOjE4MTAxNzA0MjF9.QiKHR3Sf6KI2r9hvPRu1frgWFiEQRdVeercf7pDe44Q",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2010-2.png",
     caption: "Album 2010 - Foto 2",
     year: "2010",
     tags: ["album", "2010"],
@@ -1502,7 +1502,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2010-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2010-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDEwLTMucG5nIiwiaWF0IjoxNzc4NjM0NDI4LCJleHAiOjE4MTAxNzA0Mjh9.bYoPZXJPbQWbpwjk8ampoyhCrJX3aM-HwWebKLaWhv0",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2010-3.png",
     caption: "Album 2010 - Foto 3",
     year: "2010",
     tags: ["album", "2010"],
@@ -1510,7 +1510,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2010-4",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2010-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDEwLTQucG5nIiwiaWF0IjoxNzc4NjM0NDYyLCJleHAiOjE4MTAxNzA0NjJ9.tRmH-zG3PCkmnEyPtAIl_PzTklYlToLaWJoRCTBXfdA",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2010-4.png",
     caption: "Album 2010 - Foto 4",
     year: "2010",
     tags: ["album", "2010"],
@@ -1518,7 +1518,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2013-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2013-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDEzLTEucG5nIiwiaWF0IjoxNzc4ODY0Mjg5LCJleHAiOjE4MTA0MDAyODl9.K9kIgELFVYilHMxIoC7cUFUewl7o6rqkA7xKRd9BtAw",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2013-1.png",
     caption: "Album 2013 - Foto 1",
     year: "2013",
     tags: ["album", "2013"],
@@ -1526,7 +1526,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2013-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2013-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDEzLTIucG5nIiwiaWF0IjoxNzc4ODY0MzA4LCJleHAiOjE4MTA0MDAzMDh9.oXuy7ruRLQQvBrJzczw413W6bHjWBvqrDw5zy9AV5mo",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2013-2.png",
     caption: "Album 2013 - Foto 2",
     year: "2013",
     tags: ["album", "2013"],
@@ -1534,7 +1534,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2019-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2019-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDE5LTEucG5nIiwiaWF0IjoxNzc4NjM0NDY4LCJleHAiOjE4MTAxNzA0Njh9.o3ERhXvUSA2OAO6CJwIbIVej7_yJ7xX4ULwVmH4kIIA",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2019-1.png",
     caption: "Album 2019 - Foto 1",
     year: "2019",
     tags: ["album", "2019"],
@@ -1542,7 +1542,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2019-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2019-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDE5LTIucG5nIiwiaWF0IjoxNzc4NjM0NDczLCJleHAiOjE4MTAxNzA0NzN9.JOm8yh7UAjtu1gCSKJ2UtGK--tYoYErzLAjiQkmk3w8",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2019-2.png",
     caption: "Album 2019 - Foto 2",
     year: "2019",
     tags: ["album", "2019"],
@@ -1550,7 +1550,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2019-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2019-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDE5LTMucG5nIiwiaWF0IjoxNzc4NjM0NDc5LCJleHAiOjE4MTAxNzA0Nzl9.zzHQJpvRb8MzNNR76ZfQ3wojlY3BCdE_udIy6puojPM",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2019-3.png",
     caption: "Album 2019 - Foto 3",
     year: "2019",
     tags: ["album", "2019"],
@@ -1558,7 +1558,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2019-4",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2019-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDE5LTQucG5nIiwiaWF0IjoxNzc4NjM0NDg1LCJleHAiOjE4MTAxNzA0ODV9.GMExf3L4gaSp0j_ExNMxR9rSPIagR_iTjR54KZNDDWQ",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2019-4.png",
     caption: "Album 2019 - Foto 4",
     year: "2019",
     tags: ["album", "2019"],
@@ -1566,7 +1566,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2021-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2021-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIxLTEucG5nIiwiaWF0IjoxNzc4NjM0NDkxLCJleHAiOjE4MTAxNzA0OTF9._o4tHic5ATzHY5Y8ZGcCa2xc35ObE57Uf1YBwIL9KgQ",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2021-1.png",
     caption: "Album 2021 - Foto 1",
     year: "2021",
     tags: ["album", "2021"],
@@ -1574,7 +1574,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2022-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2022-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIyLTIucG5nIiwiaWF0IjoxNzc4NjM0NDk4LCJleHAiOjE4MTAxNzA0OTh9.JNPVlfb6nhW0sW5Yh0X0-iFv3pnecqZIAdHmqCDf0-U",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2022-2.png",
     caption: "Album 2022 - Foto 2",
     year: "2022",
     tags: ["album", "2022"],
@@ -1582,7 +1582,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2023-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2023-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIzLTEucG5nIiwiaWF0IjoxNzc4NjM0NTEzLCJleHAiOjE4MTAxNzA1MTN9.mZL9pF-ouNU40jZ4Y2ZWX9leMVcsqA1oL2RspgesYOI",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2023-1.png",
     caption: "Album 2023 - Foto 1",
     year: "2023",
     tags: ["album", "2023"],
@@ -1590,7 +1590,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2023-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2023-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDIzLTIucG5nIiwiaWF0IjoxNzc4NjM0NTIzLCJleHAiOjE4MTAxNzA1MjN9.KadVr-kANH4EkT-yF2RAAnv5WQlDC6YIrmGj93Hs3Tk",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2023-2.png",
     caption: "Album 2023 - Foto 2",
     year: "2023",
     tags: ["album", "2023"],
@@ -1598,7 +1598,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2024-1",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2024-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDI0LTEucG5nIiwiaWF0IjoxNzc4NjM0NTI5LCJleHAiOjE4MTAxNzA1Mjl9.wuJQqqgwHs-bSPMshkxDcQxDqOWZbt1tUGtvU4Ekg3U",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2024-1.png",
     caption: "Album 2024 - Foto 1",
     year: "2024",
     tags: ["album", "2024"],
@@ -1606,7 +1606,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2024-2",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2024-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDI0LTIucG5nIiwiaWF0IjoxNzc4NjM0NTM3LCJleHAiOjE4MTAxNzA1Mzd9.wo3FdJ0zah07JHnmB5f6wfnon6GDVKjZHwmzYDGNbd8",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2024-2.png",
     caption: "Album 2024 - Foto 2",
     year: "2024",
     tags: ["album", "2024"],
@@ -1614,7 +1614,7 @@ const GALLERY_ALBUMS: GalleryItem[] = [
   {
     id: "g2024-3",
     type: "photo",
-    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/2024-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy8yMDI0LTMucG5nIiwiaWF0IjoxNzc4NjM0NTQ4LCJleHAiOjE4MTAxNzA1NDh9.G6oECHiUXohJE0swgjxnWzMV5uYL8UrJzVIxJbnofPw",
+    src: "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/2024-3.png",
     caption: "Album 2024 - Foto 3",
     year: "2024",
     tags: ["album", "2024"],

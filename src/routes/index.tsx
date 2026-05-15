@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Camera, Users, Heart } from "lucide-react";
 import { Navbar } from "@/components/museum/Navbar";
 import { Footer } from "@/components/museum/Footer";
-const HERO_IMAGE_URL = "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/main-image.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9tYWluLWltYWdlLnBuZyIsImlhdCI6MTc3ODYzMTQ0NSwiZXhwIjoxODEwMTY3NDQ1fQ.tGutsik3EuqxKerlJCVZgJfptrVdSc9eGiRNOJWObzY";
+const HERO_IMAGE_URL = "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/main-image.png";
 
 export const Route = createFileRoute("/")({
   component: HomePage,

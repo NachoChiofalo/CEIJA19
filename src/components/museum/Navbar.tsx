@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-const LOGO_URL = "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/sign/Ceija%20Fotos/ceija-logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iODA0NmJkMi1hZTU3LTRmNGQtYjMyYy0wN2YxMDgzMTY4YTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDZWlqYSBGb3Rvcy9jZWlqYS1sb2dvLmpwZWciLCJpYXQiOjE3Nzg2MzE0MDIsImV4cCI6MTgxMDE2NzQwMn0.JRwRV5ZKNVh40Bo5RKeJE7JfIVPzK0Pm5ZCEiPenqNE";
+const LOGO_URL = "https://aunqipledzdrzukqyoov.supabase.co/storage/v1/object/public/Ceija%20Fotos/ceija-logo.jpeg";
 
 const LINKS = [
   { to: "/" as const, label: "Inicio" },
