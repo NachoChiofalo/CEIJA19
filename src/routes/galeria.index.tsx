@@ -41,7 +41,7 @@ function GaleriaPage() {
         </section>
 
         <section className="max-w-6xl mx-auto px-5 sm:px-8 pb-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
             {GALLERY.map((item, i) => (
               <Link
                 key={item.id}
@@ -56,7 +56,7 @@ function GaleriaPage() {
                   loading={i < PRELOAD_COUNT ? "eager" : "lazy"}
                   fetchPriority={i < 2 ? "high" : "auto"}
                   decoding="async"
-                  className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
+                  className="block w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
                 />
                 {/* Overlay */}
                 <figcaption className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
