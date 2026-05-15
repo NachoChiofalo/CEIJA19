@@ -41,14 +41,13 @@ function GaleriaPage() {
         </section>
 
         <section className="max-w-6xl mx-auto px-5 sm:px-8 pb-20">
-          {/* Masonry-like layout via CSS columns */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {GALLERY.map((item, i) => (
               <Link
                 key={item.id}
                 to="/galeria/$id"
                 params={{ id: item.id }}
-                className="group relative break-inside-avoid mb-5 rounded-lg overflow-hidden bg-card border border-border hover:shadow-lg hover:border-primary/50 transition-all block"
+                className="group relative rounded-lg overflow-hidden bg-card border border-border hover:shadow-lg hover:border-primary/50 transition-all block"
                 style={{ animation: `fade-up 600ms cubic-bezier(0.16, 1, 0.3, 1) both`, animationDelay: `${i * 50}ms` }}
               >
                 <img
