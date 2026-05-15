@@ -4,6 +4,13 @@ import { Navbar } from "@/components/museum/Navbar";
 import { Footer } from "@/components/museum/Footer";
 import { GALLERY } from "@/lib/museum-data";
 
+const PRELOAD_COUNT = 6;
+const GALLERY_PRELOAD_LINKS = GALLERY.slice(0, PRELOAD_COUNT).map((item) => ({
+  rel: "preload",
+  as: "image",
+  href: item.src,
+}));
+
 export const Route = createFileRoute("/galeria/")({
   component: GaleriaPage,
   head: () => ({
@@ -13,6 +20,7 @@ export const Route = createFileRoute("/galeria/")({
       { property: "og:title", content: "Galería del CEIJA 19" },
       { property: "og:description", content: "Fotos y videos históricos del archivo de nuestra escuela." },
     ],
+    links: GALLERY_PRELOAD_LINKS,
   }),
 });
 
@@ -46,7 +54,9 @@ function GaleriaPage() {
                 <img
                   src={item.src}
                   alt={item.caption}
-                  loading="lazy"
+                  loading={i < PRELOAD_COUNT ? "eager" : "lazy"}
+                  fetchPriority={i < 2 ? "high" : "auto"}
+                  decoding="async"
                   className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
                 />
                 {/* Overlay */}
