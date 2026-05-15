@@ -135,7 +135,7 @@ function AportarPage() {
       });
     } catch (err) {
       console.error(err);
-      toast.error("No pudimos enviar tu aporte. Intentá nuevamente en un momento.");
+      //toast.error("No pudimos enviar tu aporte. Intentá nuevamente en un momento.");
     } finally {
       setSubmitting(false);
     }
